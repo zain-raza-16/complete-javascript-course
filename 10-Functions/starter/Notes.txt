@@ -1,0 +1,130 @@
+************DEAFULT PARAMETERS************
+const Gamma = function(alpha = 2 , mega = 3, zero = 10){
+//     console.log(alpha)
+// console.log(mega)
+// console.log(zero)
+// }
+****TRICK**** Making the values with skipping the middle value  
+
+// Gamma(20,undefined,40)
+
+************Primitive Types vs. Reference Types:************
+
+Primitive Types (e.g., strings, numbers): Passed as a copy of the value.
+Reference Types (e.g., objects): Passed as a reference to the memory address.
+Behavior When Passing Variables to Functions:
+
+For primitives, changes made inside the function do not affect the original variable.
+For objects, changes made to the object inside the function affect the original object because the reference points to the same memory location.
+
+JavaScript Behavior:
+
+Objects: Reference (memory address) is passed as a value.
+Primitives: A copy of the value is passed.
+
+************FIRST CLASS AND HIGHER ORDER FUNITONS************
+First-Class Functions
+Definition: Functions in JavaScript are treated as first-class citizens, meaning they are treated as values.
+Implications:
+Functions are just another type of object in JavaScript.
+
+Uses of Function Values:
+Stored in Variables: Functions can be assigned to variables.
+Stored in Object Properties: Functions can be assigned as properties in objects.
+Passed as Arguments: Functions can be passed into other functions as arguments.
+Returned from Functions: Functions can return new functions.
+Function Methods: Functions, being objects, also have methods, such as bind. These methods allow additional manipulation of functions.
+
+************callback functions vs higher order function************\
+
+Higher-Order Functions:
+Operate at a higher level of abstraction.
+Use callback functions to perform specific tasks.
+Callback Functions:
+Used extensively in JavaScript for event handling, iteration, and more.
+
+************functions returnifucntions ************
+const 
+
+
+**********ARROW FUNTIONS**************
+How Arrow Functions Work
+
+One Parameter: If the function takes only one parameter, you can omit the parentheses:
+const square = x => x * x;
+
+No Parameters: If there are no parameters, you must use empty parentheses:
+const sayHello = () => console.log("Hello!");
+
+Returning Objects:
+To return an object, wrap it in parentheses to avoid confusion with the function body:
+const getUser = () => ({ name: "Zain", age: 25 });
+
+
+
+
+********** call,lapply,bind methods **********
+
+call and apply allow manual setting of this for a function.
+
+Difference between call and apply:
+
+call: Pass arguments directly.
+
+apply: Pass arguments as an array.
+
+Prefer call with the spread operator in modern JavaScript.
+
+Similar to the call method, bind allows manual setting of the this keyword for any function.
+
+Key difference: bind does not immediately invoke the function. Instead, it returns a new function with this permanently set to the provided value.
+
+1) Predefined Functions
+2) Binding to create new partial function
+3) With Event Listeners
+
+
+********** PROJECT LEARNINGS **********
+1) NUMBER()
+
+2)Using this. keyword in the situation below
+
+const poll = {
+    question: 'What is your favourite programming language?',
+
+    registerNewAnswer() {
+        const ans  = Number(promot(`${this.question}`))
+        
+    }
+
+
+3) Creating a method in a object 
+4) typeof ?
+
+
+ **********Immediately Invoked Function Expressions (IIFE)**********
+
+ IIFE Syntax:
+
+(function () {
+    console.log('This will never run again');
+})();
+
+Arrow function variant:
+
+(() => {
+    console.log('This will also never run again');
+})();
+
+
+Block Scope (ES6):
+let and const create block-level scopes.
+
+{
+    let isPrivate = 23;
+    console.log(isPrivate); // Accessible here
+}
+console.log(isPrivate); // Error: isPrivate is not defined
+
+Modern JavaScript often uses block scopes instead of IIFE for data privacy.
+Variables declared with var do not respect block scopes

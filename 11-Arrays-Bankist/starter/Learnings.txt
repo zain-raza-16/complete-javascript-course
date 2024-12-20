@@ -1,0 +1,10 @@
+********************forEach VS for loop *********************
+Note the Syntax
+
+movements.forEach((movement, index) => {
+  console.log(index + 1, movement);
+});
+
+for (const [index, movement] of movements.entries()) {
+  console.log(index + 1, movement);
+}

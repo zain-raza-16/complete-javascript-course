@@ -63,5 +63,41 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
-// LECTURES
 
+const displayMovements = function(movements){
+
+  containerMovements.innerHTML =''
+
+  movements.forEach((mov,i)=>{
+    const type = mov > 0 ? 'deposit' : "withdrawal"
+
+    const html = `        
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${i+1} ${type}</div>
+      <div class="movements__value">${mov}</div>
+    </div>
+    `
+    containerMovements.insertAdjacentHTML('beforeend',html)
+  } )
+}
+
+displayMovements(account1.movements)
+
+const USDAmount = account1.movements.map(function(x){
+return x * 2 
+})
+
+console.log(USDAmount)
+
+// const USDAmountFORLOOP = []
+
+// account1.movements.forEach((y)=>{
+//   USDAmountFORLOOP.push(y*3)
+// }
+// )
+// console.log(USDAmountFORLOOP)
+
+displayMovements(account1.movements)
+
+const USDAmountArrow = account1.movements.map((x)=>{return x * 2 })
+console.log(USDAmountArrow)

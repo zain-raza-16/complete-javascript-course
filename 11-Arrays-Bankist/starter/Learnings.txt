@@ -8,3 +8,26 @@ movements.forEach((movement, index) => {
 for (const [index, movement] of movements.entries()) {
   console.log(index + 1, movement);
 }
+
+*********** CHANGING CLASS NAME USING TEMPLATE LITERAL *********** 
+const displayMovements = function(movements){
+
+  containerMovements.innerHTML =''
+
+  movements.forEach((mov,i)=>{
+    const type = mov > 0 ? 'deposit' : "withdrawal"
+
+    const html = `        
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${i} ${type}</div>
+      <div class="movements__value">${mov}</div>
+    </div>
+    `
+    containerMovements.insertAdjacentHTML('afterbegin',html)
+  } )
+}
+**************  ARROW FUNCTION ************** 
+const USDAmountArrow = account1.movements.map((x)=>{return x * 2 })
+const USDAmountArrow = account1.movements.map(x=>{return x * 2 })
+const USDAmountArrow = account1.movements.map(x=>return x * 2 )
+const USDAmountArrow = account1.movements.map(x=> x * 2 )

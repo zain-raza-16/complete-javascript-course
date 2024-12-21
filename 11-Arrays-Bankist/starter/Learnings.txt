@@ -26,8 +26,8 @@ const displayMovements = function(movements){
     containerMovements.insertAdjacentHTML('afterbegin',html)
   } )
 }
-**************  ARROW FUNCTION ************** 
+**************  ARROW FUNCTION SAME ************** 
 const USDAmountArrow = account1.movements.map((x)=>{return x * 2 })
-const USDAmountArrow = account1.movements.map(x=>{return x * 2 })
-const USDAmountArrow = account1.movements.map(x=>return x * 2 )
-const USDAmountArrow = account1.movements.map(x=> x * 2 )
+const USDAmountArrow = account1.movements.map(x=>{return x * 2 }) ** One parameter
+const USDAmountArrow = account1.movements.map(x=>return x * 2 ) ** One line
+const USDAmountArrow = account1.movements.map(x=> x * 2 ) ** one line which is return itself

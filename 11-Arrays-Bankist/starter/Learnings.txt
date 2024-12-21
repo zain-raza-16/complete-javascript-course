@@ -31,3 +31,15 @@ const USDAmountArrow = account1.movements.map((x)=>{return x * 2 })
 const USDAmountArrow = account1.movements.map(x=>{return x * 2 }) ** One parameter
 const USDAmountArrow = account1.movements.map(x=>return x * 2 ) ** One line
 const USDAmountArrow = account1.movements.map(x=> x * 2 ) ** one line which is return itself
+
+
+**************  Clearing Value ************** 
+inputLoginUsername.value = inputLoginPin.value = '';
+
+
+**************  .find ************** 
+Syntax
+const transferAcc = accounts.find(acc => acc.username === inputTransferTo.value)
+
+**************  .splice ************** 
+accounts.splice(index, 1);

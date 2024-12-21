@@ -1,1 +1,7 @@
 1) Write the Function inside the Function using arrow Functions
+2) How does math.max work and how can 
+
+3) IIFE
+    (function(){
+
+    })();

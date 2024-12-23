@@ -1,0 +1,138 @@
+<!-- // Programming Task
+// jQuery | DOM Manipulation - Basic Form
+// Implement an interactive form using jQuery to allow editing and calculating simple statistics from a list of user inputs. The form should dynamically update the statistics as the user modifies the input values.
+
+// Problem Statement
+// Create a simple form where the user can:
+
+// Enter multiple numeric values into a list.
+// Automatically calculate the following statistics and display them below the form:
+// The sum of all entered values.
+// The average of all entered values.
+// Requirements
+// Implement a jQuery-based solution.
+// Dynamically update the statistics whenever the user changes an input value.
+// Handle cases where no values are entered (display 0 for the sum and 0 for the average).
+// Starter Code
+// html
+// Copy code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .statistics { margin-top: 20px; }
+    </style>
+
+
+</head>
+<body>
+
+    <form id="numberForm">
+        <label>Enter Numbers:</label><br>
+        <input type="text" class="number-input" placeholder="Enter a number">
+        <button type="button" id="addField">Add Another</button>
+    </form>
+    <div class="statistics">
+        <p>Sum: <span id="sum">0</span></p>
+        <p>Average: <span id="average">0</span></p>
+    </div>
+
+    <script>
+        // Your implementation here
+        const inputSection = document.querySelector('.number-input')
+        const button = document.querySelector('#addField')
+        const sumLabel = document.querySelector('#sum')
+        const avgLabel = document.querySelector('#average')
+        let currSum = 0
+        let currAvg = 0
+        let totalNumber = 0
+
+
+        const handleClick = function(){
+            const userInput = inputSection.value
+            console.log('Entered value:', userInput);
+            currSum += +userInput
+
+            sumLabel.textContent = currSum
+            totalNumber ++;
+            avgLabel.textContent = currSum/totalNumber
+
+
+        } 
+
+        button.addEventListener('click',handleClick)
+        $("#numberForm").on("input", ".number-input", handleClick);
+
+
+//         $(document).ready(function () {
+//     function updateStatistics() {
+//         const numbers = $(".number-input")
+//             .map(function () {
+//                 const value = parseFloat($(this).val());
+//                 return isNaN(value) ? 0 : value; // Treat empty inputs as 0
+//             })
+//             .get();
+
+//         const sum = numbers.reduce((acc, num) => acc + num, 0);
+//         const average = numbers.length ? sum / numbers.length : 0;
+
+//         $("#sum").text(sum.toFixed(2));
+//         $("#average").text(average.toFixed(2));
+//     }
+
+//     // Add another input field
+//     $("#addField").on("click", function () {
+//         const newInput = `<input type="text" class="number-input" placeholder="Enter a number">`;
+//         $("#numberForm").append(newInput);
+//     });
+
+//     // Update statistics whenever an input changes
+//     $("#numberForm").on("input", ".number-input", updateStatistics);
+// });
+
+        
+
+
+    </script>
+</body>
+</html>
+
+<!-- const inputSection -->
+
+
+<!-- Expected Behavior
+The "Add Another" button should add another input field for entering a number.
+As the user enters or updates values, the sum and average should update dynamically.
+If all inputs are empty, both sum and average should display 0.
+Solution
+javascript
+Copy code
+$(document).ready(function () {
+    function updateStatistics() {
+        const numbers = $(".number-input")
+            .map(function () {
+                const value = parseFloat($(this).val());
+                return isNaN(value) ? 0 : value; // Treat empty inputs as 0
+            })
+            .get();
+
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        const average = numbers.length ? sum / numbers.length : 0;
+
+        $("#sum").text(sum.toFixed(2));
+        $("#average").text(average.toFixed(2));
+    }
+
+    // Add another input field
+    $("#addField").on("click", function () {
+        const newInput = `<input type="text" class="number-input" placeholder="Enter a number">`;
+        $("#numberForm").append(newInput);
+    });
+
+    // Update statistics whenever an input changes
+    $("#numberForm").on("input", ".number-input", updateStatistics);
+}); -->

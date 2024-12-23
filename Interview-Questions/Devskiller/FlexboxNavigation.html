@@ -1,0 +1,68 @@
+<!-- Task 2: CSS/HTML | Flexbox Navigation Bar
+Description
+Complete the provided HTML and CSS to create a responsive navigation bar using Flexbox. The navigation bar must meet the following requirements:
+
+Display navigation items horizontally on large screens and stack vertically on smaller screens (e.g., when the screen width is below 768px).
+Include appropriate spacing between navigation items.
+Center the navigation bar horizontally on the page.
+
+CSS Requirements:
+
+Use Flexbox to align and layout items.
+Navigation should look like:
+Large screens: Items displayed in a horizontal row, centered, with even spacing.
+Small screens: Items stacked vertically.
+Styling is secondary; focus on layout using Flexbox. 
+
+
+Provided Files
+HTML Template: -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Navigation Bar</title>
+    <style>
+      .navbar {
+        background-color: #333; /* Improved contrast */
+        padding: 1rem;
+        text-align: center; /* Center the navbar horizontally */
+      }
+
+      .navbar-list {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adjusted for better spacing */
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .navbar-item a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .navbar-list {
+          flex-direction: column;
+          align-items: center; /* Ensure items are visually aligned */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li class="navbar-item"><a href="#">Home</a></li>
+        <li class="navbar-item"><a href="#">About</a></li>
+        <li class="navbar-item"><a href="#">Services</a></li>
+        <li class="navbar-item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

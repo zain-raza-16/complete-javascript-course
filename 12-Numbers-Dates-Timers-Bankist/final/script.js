@@ -280,6 +280,12 @@ btnLogin.addEventListener('click', function (e) {
   }
 });
 
+
+currentAccount = account1;
+containerApp.style.opacity = 100;
+updateUI(currentAccount);
+
+
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
   const amount = +inputTransferAmount.value;

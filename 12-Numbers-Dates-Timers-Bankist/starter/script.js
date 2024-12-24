@@ -153,7 +153,7 @@ const updateUI = function (acc) {
 
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount ;
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
@@ -179,6 +179,12 @@ btnLogin.addEventListener('click', function (e) {
     updateUI(currentAccount);
   }
 });
+
+//Artificially make account
+currentAccount = account1;
+containerApp.style.opacity = 100;
+updateUI(currentAccount);
+
 
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();

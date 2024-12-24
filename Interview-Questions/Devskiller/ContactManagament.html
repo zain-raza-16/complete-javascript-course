@@ -1,0 +1,61 @@
+<template>
+    <div id="app">
+      <h1>Contact Management</h1>
+      <input
+        type="text"
+        v-model="searchQuery"
+        placeholder="Search for a contact"
+        @input="filterContacts"
+      />
+      <ul>
+        <li v-for="contact in filteredContacts" :key="contact.id">
+          {{ contact.name }} - {{ contact.phone }}
+        </li>
+      </ul>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        searchQuery: "", // Stores the user's search input
+        contacts: [
+          { id: 1, name: "Alice Johnson", phone: "123-456-7890" },
+          { id: 2, name: "Bob Smith", phone: "987-654-3210" },
+          { id: 3, name: "Charlie Brown", phone: "456-789-1234" }
+        ],
+        filteredContacts: [] // Stores the filtered list of contacts
+      };
+    },
+    methods: {
+      filterContacts() {
+        // Your implementation here
+      }
+    },
+    mounted() {
+      // Initialize the filteredContacts list to display all contacts initially
+      this.filteredContacts = this.contacts;
+    }
+  };
+  </script>
+  
+  <style>
+  #app {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 300px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    padding: 5px 0;
+  }
+  </style>
+  
